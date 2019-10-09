@@ -1,0 +1,21 @@
+00:54:51 **** Incremental Build of configuration Debug for project freertos_blinky_revised ****
+make -r -j4 all 
+Building file: ../example/src/freertos_blinky_revised.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"/home/kirat/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_chip_175x_6x/inc" -I"/home/kirat/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_board_nxp_lpcxpresso_1769/inc" -I"/home/kirat/Documents/RTOS/RTOS/freertos_blinky_revised/example/inc" -I"/home/kirat/Documents/RTOS/RTOS/freertos_blinky_revised/freertos/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"example/src/freertos_blinky_revised.d" -MT"example/src/freertos_blinky_revised.o" -MT"example/src/freertos_blinky_revised.d" -o "example/src/freertos_blinky_revised.o" "../example/src/freertos_blinky_revised.c"
+Finished building: ../example/src/freertos_blinky_revised.c
+ 
+Building target: freertos_blinky_revised.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/kirat/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_chip_175x_6x/Debug" -L"/home/kirat/Documents/MCUXpresso_11.0.1_2563/workspace/lpc_board_nxp_lpcxpresso_1769/Debug" -Xlinker -Map="freertos_blinky_revised.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "freertos_blinky_Debug.ld" -o "freertos_blinky_revised.axf"  ./freertos/src/FreeRTOSCommonHooks.o ./freertos/src/heap_3.o ./freertos/src/list.o ./freertos/src/port.o ./freertos/src/queue.o ./freertos/src/tasks.o  ./example/src/cr_startup_lpc175x_6x.o ./example/src/freertos_blinky_revised.o ./example/src/sysinit.o   -llpc_board_nxp_lpcxpresso_1769 -llpc_chip_175x_6x
+Finished building target: freertos_blinky_revised.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "freertos_blinky_revised.axf"; # arm-none-eabi-objcopy -v -O binary "freertos_blinky_revised.axf" "freertos_blinky_revised.bin" ; # checksum -p LPC1769 -d "freertos_blinky_revised.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9452	      8	    820	  10280	   2828	freertos_blinky_revised.axf
+ 
+
+00:54:51 Build Finished. 0 errors, 0 warnings. (took 897ms)
+
