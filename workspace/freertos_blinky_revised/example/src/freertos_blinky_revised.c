@@ -59,40 +59,34 @@ static void prvSetupHardware(void)
 
 /* LED1 toggle thread */
 static void vLEDTask0(void *pvParameters) {
-	/*bool LedState = false;*/
-
 	while (1) {
 		Board_LED_Set(0, true);
 		vTaskDelay(1000);
 		Board_LED_Set(0, false);
-		/*LedState = (bool) !LedState;*/
 		vTaskDelay(2000);
 	}
 }
 
 /* LED2 toggle thread */
 static void vLEDTask1(void *pvParameters) {
-	/*bool LedState = true;*/
-	vTaskDelay(1000);
 	while (1) {
+		Board_LED_Set(1, false);
+		vTaskDelay(1000);
 		Board_LED_Set(1, true);
 		vTaskDelay(1000);
-		/*LedState = (bool) !LedState;*/
 		Board_LED_Set(1, false);
-		vTaskDelay(2000);
+		vTaskDelay(1000);
 	}
 }
 
 /* LED2 toggle thread */
 static void vLEDTask2(void *pvParameters) {
-	/*bool LedState = false;*/
-	vTaskDelay(2000);
 		while (1) {
-			Board_LED_Set(2, true);
-			vTaskDelay(1000);
-			/*LedState = (bool) !LedState;*/
 			Board_LED_Set(2, false);
 			vTaskDelay(2000);
+			Board_LED_Set(2, true);
+			vTaskDelay(1000);
+			
 	}
 }
 
