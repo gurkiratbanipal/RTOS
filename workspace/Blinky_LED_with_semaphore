@@ -9,7 +9,6 @@ int red =0;
 int green =1;
 int blue =2;
 
-/* sets up system hardware */
 static void prvSetupHardware(void)
 {
 	SystemCoreClockUpdate();
